@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimoni - SR Laundry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        .primary-color { color: #c00000; }
+        .bg-primary { background-color: #c00000; }
+        .hover-bg-primary:hover { background-color: #a00000; }
+        /* Warna Emas untuk Bintang */
+        .accent-color { color: #DAA520; }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <a href="index.html">
+            <img src="img/logo.png" alt="SR Laundry Express Logo" class="h-14 rounded-full shadow-sm border-2 border-white">
+        </a>
+        <div class="hidden md:flex space-x-6 items-center">
+            <a href="index.html" class="primary-color font-semibold">Home</a>
+            <a href="tentang.html" class="text-gray-600 hover:text-red-700">Tentang</a>
+            <a href="layanan.html" class="text-gray-600 hover:text-red-700">Layanan</a>
+            <a href="promo.html" class="text-gray-600 hover:text-red-700">Promo</a>
+            <a href="testimoni.html" class="text-gray-600 hover:text-red-700">Testimoni</a>
+            <a href="kontak.html" class="text-gray-600 hover:text-red-700">Kontak</a>
+            <a href="booking.html" class="bg-primary text-white px-5 py-2 rounded-full hover-bg-primary transition duration-300">Booking</a>
+        </div>
+        <button id="mobile-menu-button" class="md:hidden">
+            <i class="fas fa-bars text-2xl text-gray-700"></i>
+        </button>
+    </nav>
+    
+    <div id="mobile-menu" class="absolute w-full left-0 hidden md:hidden bg-white shadow-lg">
+        <a href="index.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 font-semibold">Home</a>
+        <a href="tentang.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Tentang</a>
+        <a href="layanan.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Layanan</a>
+        <a href="promo.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Promo</a>
+        <a href="testimoni.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Testimoni</a>
+        <a href="kontak.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Kontak</a>
+        <a href="booking.html" class="block py-4 px-6 text-white bg-primary text-center font-bold">Booking Sekarang</a>
+    </div>
+</header>
+
+    <main class="container mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800">Apa Kata Pelanggan Kami</h1>
+            <p class="text-gray-600 mt-2">Ulasan asli dari pelanggan setia kami.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="flex items-center mb-4">
+                    <img src="https://i.pravatar.cc/50?u=a" alt="Avatar" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <p class="font-bold text-gray-800">Andi S.</p>
+                        <div class="accent-color">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-600 italic">"Tempatnya bersih, mesinnya modern. Nyuci jadi cepet banget, gak sampai 2 jam udah beres. Recommended!"</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="flex items-center mb-4">
+                    <img src="https://i.pravatar.cc/50?u=b" alt="Avatar" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <p class="font-bold text-gray-800">Rina W.</p>
+                        <div class="accent-color">
+                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-600 italic">"Suka banget sama konsep 1 mesin 1 pelanggan, jadi lebih higienis. Harganya juga oke. Bakal langganan di sini."</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="flex items-center mb-4">
+                    <img src="https://i.pravatar.cc/50?u=c" alt="Avatar" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <p class="font-bold text-gray-800">Budi P.</p>
+                        <div class="accent-color">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-600 italic">"Drop off nya sangat membantu buat yang sibuk. Pakaian jadi wangi dan rapi. Pelayanannya ramah."</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white pt-12 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+                <div class="flex flex-col items-center md:items-start">
+                    <img src="img/logo.png" alt="SR Laundry Express Logo" class="h-16 mb-4 bg-white p-1 rounded-md">
+                    <p class="text-gray-400">Solusi laundry modern di Ciledug yang mengutamakan kecepatan dan kebersihan.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Navigasi</h3>
+                    <ul class="space-y-2">
+                        <li><a href="tentang.html" class="text-gray-400 hover:text-white">Tentang Kami</a></li>
+                        <li><a href="layanan.html" class="text-gray-400 hover:text-white">Layanan</a></li>
+                        <li><a href="booking.html" class="text-gray-400 hover:text-white">Booking</a></li>
+                        <li><a href="kontak.html" class="text-gray-400 hover:text-white">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Hubungi Kami</h3>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="https://wa.me/6281297252322?text=Halo%20SR%20Laundry" target="_blank" class="text-3xl text-gray-400 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/srlaundrycoin/" target="_blank" class="text-3xl text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500">
+                <p>© 2025 SR Laundry. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
