@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Kontak & Lokasi - SR Laundry</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/png" href="img/logo.png">
@@ -230,5 +231,137 @@
             });
         });
     </script>
+=======
+    <title>Kontak - SR Laundry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+     <style>
+        .primary-color { color: #c00000; }
+        .bg-primary { background-color: #c00000; }
+        .hover-bg-primary:hover { background-color: #a00000; }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <a href="index.html">
+            <img src="img/logo.png" alt="SR Laundry Express Logo" class="h-14 rounded-full shadow-sm border-2 border-white">
+        </a>
+        <div class="hidden md:flex space-x-6 items-center">
+            <a href="index.html" class="primary-color font-semibold">Home</a>
+            <a href="tentang.html" class="text-gray-600 hover:text-red-700">Tentang</a>
+            <a href="layanan.html" class="text-gray-600 hover:text-red-700">Layanan</a>
+            <a href="promo.html" class="text-gray-600 hover:text-red-700">Promo</a>
+            <a href="testimoni.html" class="text-gray-600 hover:text-red-700">Testimoni</a>
+            <a href="kontak.html" class="text-gray-600 hover:text-red-700">Kontak</a>
+            <a href="booking.html" class="bg-primary text-white px-5 py-2 rounded-full hover-bg-primary transition duration-300">Booking</a>
+        </div>
+        <button id="mobile-menu-button" class="md:hidden">
+            <i class="fas fa-bars text-2xl text-gray-700"></i>
+        </button>
+    </nav>
+    
+    <div id="mobile-menu" class="absolute w-full left-0 hidden md:hidden bg-white shadow-lg">
+        <a href="index.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 font-semibold">Home</a>
+        <a href="tentang.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Tentang</a>
+        <a href="layanan.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Layanan</a>
+        <a href="promo.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Promo</a>
+        <a href="testimoni.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Testimoni</a>
+        <a href="kontak.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Kontak</a>
+        <a href="booking.html" class="block py-4 px-6 text-white bg-primary text-center font-bold">Booking Sekarang</a>
+    </div>
+</header>
+
+    <main class="container mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800">Hubungi & Kunjungi Kami</h1>
+            <p class="text-gray-600 mt-2">Kami siap membantu Anda di semua cabang kami.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-semibold primary-color mb-4">Alamat Cabang</h2>
+                <div class="space-y-5">
+                    <div class="border-l-4 border-primary pl-4">
+                        <h3 class="font-bold text-lg">Larangan (Peta)</h3>
+                        <p class="text-gray-600">RT.002/RW.013, Larangan Selatan, Kec. Larangan, Kota Tangerang, Banten 15154</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=QP2H%2BPVG" target="_blank" class="text-red-600 hover:underline font-semibold mt-1 inline-block">
+                            Lihat di Google Maps <i class="fas fa-external-link-alt text-xs"></i>
+                        </a>
+                    </div>
+                    <div class="border-l-4 border-gray-300 pl-4">
+                        <h3 class="font-bold text-lg">Paninggilan</h3>
+                        <p class="text-gray-600">Jl. Paninggilan Raya, Ciledug (Alamat Lengkap)</p>
+                    </div>
+                    <div class="border-l-4 border-gray-300 pl-4">
+                        <h3 class="font-bold text-lg">Parung Serab</h3>
+                        <p class="text-gray-600">Jl. Parung Serab, Ciledug (Alamat Lengkap)</p>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-semibold primary-color mb-4 mt-8">Kontak & Jam Operasional</h2>
+                 <div class="space-y-3 mb-6">
+                    <a href="https://wa.me/6281297252322?text=Halo%20SR%20Laundry" target="_blank" class="flex items-center bg-green-500 text-white px-4 py-3 rounded-md hover:bg-green-600 w-full justify-center text-lg">
+                        <i class="fab fa-whatsapp mr-3"></i> WhatsApp
+                    </a>
+                    <a href="https://www.instagram.com/srlaundrycoin/" target="_blank" class="flex items-center bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-3 rounded-md hover:opacity-90 w-full justify-center text-lg">
+                        <i class="fab fa-instagram mr-3"></i> Instagram
+                    </a>
+                </div>
+                <div class="flex items-center bg-red-50 p-4 rounded-md">
+                    <i class="fas fa-clock primary-color text-2xl mr-4"></i>
+                    <div>
+                        <p class="font-bold text-gray-800">Setiap Hari</p>
+                        <p class="text-gray-600">08:00 – 21:00 WIB</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rounded-lg shadow-lg overflow-hidden">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.191244439065!2d106.71375!3d-6.2385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fa8943343881%3A0x8e83b4691e147ed4!2sSR%20Laundry%20Coin!5e0!3m2!1sen!2sid!4v1688888888888" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </main>
+
+     <footer class="bg-gray-800 text-white pt-12 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+                <div class="flex flex-col items-center md:items-start">
+                    <img src="img/logo.png" alt="SR Laundry Express Logo" class="h-16 mb-4 bg-white p-1 rounded-md">
+                    <p class="text-gray-400">Solusi laundry modern di Ciledug yang mengutamakan kecepatan dan kebersihan.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Navigasi</h3>
+                    <ul class="space-y-2">
+                        <li><a href="tentang.html" class="text-gray-400 hover:text-white">Tentang Kami</a></li>
+                        <li><a href="layanan.html" class="text-gray-400 hover:text-white">Layanan</a></li>
+                        <li><a href="booking.html" class="text-gray-400 hover:text-white">Booking</a></li>
+                        <li><a href="kontak.html" class="text-gray-400 hover:text-white">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Hubungi Kami</h3>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="https://wa.me/6281297252322?text=Halo%20SR%20Laundry" target="_blank" class="text-3xl text-gray-400 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/srlaundrycoin/" target="_blank" class="text-3xl text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500">
+                <p>© 2025 SR Laundry. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+>>>>>>> 0cf95a5acddcefdd081e5354131156f8513e385b
 </body>
 </html>
