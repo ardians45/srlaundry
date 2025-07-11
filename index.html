@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SR Laundry Express - Laundry Cepat & Profesional di Ciledug</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <style>
+        /* Warna Brand */
+        .primary-color { color: #c00000; }
+        .bg-primary { background-color: #c00000; }
+        .hover-bg-primary:hover { background-color: #a00000; }
+        .accent-color { color: #DAA520; }
+
+        /* Keyframes untuk animasi "fade in up" */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Kelas untuk elemen yang akan dianimasikan, mulai dengan transparan */
+        .animated-section {
+            opacity: 0;
+        }
+        
+        /* Kelas yang ditambahkan oleh JavaScript saat elemen terlihat untuk memicu animasi */
+        .is-visible {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <a href="index.html">
+            <img src="img/logo.png" alt="SR Laundry Express Logo" class="h-14 rounded-full shadow-sm border-2 border-white">
+        </a>
+        <div class="hidden md:flex space-x-6 items-center">
+            <a href="index.html" class="primary-color font-semibold">Home</a>
+            <a href="tentang.html" class="text-gray-600 hover:text-red-700">Tentang</a>
+            <a href="layanan.html" class="text-gray-600 hover:text-red-700">Layanan & Harga</a>
+            <a href="promo.html" class="text-gray-600 hover:text-red-700">Promo</a>
+            <a href="testimoni.html" class="text-gray-600 hover:text-red-700">Testimoni</a>
+            <a href="kontak.html" class="text-gray-600 hover:text-red-700">Kontak</a>
+            <a href="booking.html" class="bg-primary text-white px-5 py-2 rounded-full hover-bg-primary transition duration-300">Booking</a>
+        </div>
+        <button id="mobile-menu-button" class="md:hidden">
+            <i class="fas fa-bars text-2xl text-gray-700"></i>
+        </button>
+    </nav>
+    
+    <div id="mobile-menu" class="absolute w-full left-0 hidden md:hidden bg-white shadow-lg">
+        <a href="index.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 font-semibold">Home</a>
+        <a href="tentang.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Tentang</a>
+        <a href="layanan.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Layanan</a>
+        <a href="promo.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Promo</a>
+        <a href="testimoni.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Testimoni</a>
+        <a href="kontak.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Kontak</a>
+        <a href="booking.html" class="block py-4 px-6 text-white bg-primary text-center font-bold">Booking Sekarang</a>
+    </div>
+</header>
+
+    <main class="overflow-x-hidden">
+        <section class="relative bg-red-50 py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center z-10 relative">
+                <h1 class="text-4xl md:text-6xl font-black text-gray-900 leading-tight">Pakaian Bersih, Hidup Praktis.</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Selamat datang di SR Laundry Ciledug! Nikmati layanan laundry modern yang cepat, higienis, dan terjangkau. Selesai hanya dalam 2 jam.</p>
+                <a href="booking.html" class="mt-8 inline-block bg-primary text-white font-bold text-lg px-8 py-4 rounded-full hover-bg-primary transition shadow-xl transform hover:scale-105">
+                    <i class="fab fa-whatsapp"></i> Booking Sekarang
+                </a>
+            </div>
+        </section>
+
+        <section class="animated-section py-20 bg-white">
+            <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="img/laundry-modern.jpeg" alt="Mesin Laundry Modern" class="rounded-2xl shadow-2xl w-full">
+                </div>
+                <div class="text-gray-700">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Kenapa Kami Pilihan Terbaik?</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-user-shield text-3xl primary-color mt-1"></i>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">100% Higienis & Privat</h3>
+                                <p class="text-gray-600">Satu mesin hanya untuk satu pelanggan. Kami jamin pakaian Anda tidak akan tercampur dan selalu steril.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-rocket text-3xl primary-color mt-1"></i>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">Super Cepat, Hanya 2 Jam</h3>
+                                <p class="text-gray-600">Proses cuci dan kering selesai dalam waktu singkat. Sempurna untuk Anda yang sibuk dan dinamis.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-tags text-3xl primary-color mt-1"></i>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">Promo & Harga Terbaik</h3>
+                                <p class="text-gray-600">Nikmati berbagai promo menarik dan harga yang sangat terjangkau untuk semua layanan kami.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- SECTION BARU: Perawatan Mesin -->
+    <section class="animated-section py-20 bg-gray-100">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Mesin Cuci Selalu Bersih</h2>
+                <p class="text-lg text-gray-600 mb-6">Di SR Laundry, kami rutin melakukan pembersihan dan perawatan mesin cuci untuk menjamin kebersihan maksimal setiap cucian pelanggan. Mesin dibersihkan secara berkala dari sisa residu deterjen dan kotoran agar pakaian Anda tetap higienis dan bebas bau apek.</p>
+                <ul class="list-disc ml-6 text-gray-700 space-y-2">
+                    <li>Sanitasi mesin setiap hari</li>
+                    <li>Filter dan tabung dicek secara berkala</li>
+                    <li>Menggunakan cairan pembersih khusus non-kimia berbahaya</li>
+                </ul>
+            </div>
+            <div>
+                <img src="img/maintenace.jpg" alt="Pembersihan Mesin Cuci" class="rounded-2xl shadow-xl w-full">
+            </div>
+        </div>
+    </section>
+
+        <section class="animated-section py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Layanan Utama Kami</h2>
+                    <p class="mt-3 text-lg text-gray-600">Pilih layanan yang paling sesuai dengan gaya hidup Anda.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <i class="fas fa-tshirt text-5xl primary-color mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Self-Service</h3>
+                        <p class="text-gray-600 mb-6">Kontrol penuh di tangan Anda! Cuci dan keringkan sendiri dengan mesin canggih kami. Cepat, mudah, dan praktis.</p>
+                        <a href="layanan.html" class="font-semibold text-primary hover:underline">Pelajari Lebih Lanjut →</a>
+                    </div>
+                    <div class="bg-primary text-white p-8 rounded-2xl shadow-lg text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                        <i class="fas fa-shopping-basket text-5xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Drop-Off</h3>
+                        <p class="text-gray-200 mb-6">Sibuk? Cukup serahkan pakaian kotor Anda, kami akan urus semuanya hingga bersih, wangi, dan rapi.</p>
+                         <a href="layanan.html" class="font-semibold text-white hover:text-amber-300">Pelajari Lebih Lanjut →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="animated-section py-20 bg-white">
+             <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12">Mereka Suka Layanan Kami!</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.pravatar.cc/50?u=a" alt="Avatar" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold text-gray-800 text-left">Andi S.</p>
+                                <div class="text-amber-400 text-left"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic text-left">"Tempatnya bersih, mesinnya modern. Nyuci jadi cepet banget, gak sampai 2 jam udah beres. Recommended!"</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.pravatar.cc/50?u=b" alt="Avatar" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold text-gray-800 text-left">Rina W.</p>
+                                <div class="text-amber-400 text-left"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic text-left">"Suka banget sama konsep 1 mesin 1 pelanggan, jadi lebih higienis. Harganya juga oke. Bakal langganan di sini."</p>
+                    </div>
+                     <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <img src="https://i.pravatar.cc/50?u=c" alt="Avatar" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold text-gray-800 text-left">Budi P.</p>
+                                <div class="text-amber-400 text-left"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic text-left">"Drop off nya sangat membantu buat yang sibuk. Pakaian jadi wangi dan rapi. Pelayanannya ramah."</p>
+                    </div>
+                </div>
+                <a href="testimoni.html" class="mt-8 inline-block text-primary hover:underline font-semibold text-lg">Lihat Semua Testimoni →</a>
+            </div>
+        </section>
+
+        <section class="animated-section bg-primary mb-0">
+            <div class="container mx-auto px-6 py-16 text-center text-white">
+                 <h2 class="text-3xl font-bold mb-4">Tunggu Apa Lagi?</h2>
+                <p class="max-w-2xl mx-auto mb-8">Rasakan sendiri kemudahan dan kebersihan laundry di SR Laundry. Pakaian Anda akan berterima kasih!</p>
+                <a href="booking.html" class="bg-white text-red-700 font-bold text-lg px-8 py-4 rounded-full hover:bg-gray-200 transition shadow-lg transform hover:scale-105">
+                    Hubungi Kami Sekarang
+                </a>
+            </div>
+        </section>
+    </main>
+
+        <footer class="bg-gray-800 text-white border-t-0 border-primary mt-0">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+                <div class="lg:col-span-2">
+                    <a href="index.html">
+                        <img src="img/logo-removebg.png" alt="SR Laundry Logo" class="h-16 mb-4">
+                    </a>
+                    <p class="text-gray-400 text-sm pr-8 leading-relaxed">
+                        SR Laundry adalah solusi laundry modern terpercaya di Ciledug, yang berkomitmen pada kebersihan, kecepatan, dan kepuasan Anda. Kami hadir untuk membuat hidup Anda lebih praktis.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4 tracking-wider">Navigasi Cepat</h3>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="tentang.html" class="hover:text-white hover:translate-x-1 transition-all duration-300 block">Tentang Kami</a></li>
+                        <li><a href="layanan.html" class="hover:text-white hover:translate-x-1 transition-all duration-300 block">Layanan & Harga</a></li>
+                        <li><a href="promo.html" class="hover:text-white hover:translate-x-1 transition-all duration-300 block">Promo</a></li>
+                        <li><a href="kontak.html" class="hover:text-white hover:translate-x-1 transition-all duration-300 block">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4 tracking-wider">Hubungi Kami</h3>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 w-4 text-center"></i>
+                            <span>Cabang Utama: Larangan, Ciledug, Kota Tangerang</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock mt-1 mr-3 w-4 text-center"></i>
+                            <span>08:00 – 21:00 WIB<br>(Buka Setiap Hari)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 w-4 text-center"></i>
+                            <a href="mailto:info@srlaundry.co.id" class="hover:text-white transition">info@srlaundry.co.id</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="border-t border-gray-700">
+            <div class="container mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2025 SR Laundry. All Rights Reserved.</p>
+                <div class="flex justify-center space-x-3">
+                    <a href="https://wa.me/6281297252322?text=Halo%20SR%20Laundry" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-600 text-gray-400 hover:bg-primary hover:border-primary hover:text-white transition-all duration-300" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/srlaundrycoin/" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-600 text-gray-400 hover:bg-primary hover:border-primary hover:text-white transition-all duration-300" aria-label="Instagram">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script untuk Mobile Menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // --- SCRIPT ANIMASI SAAT SCROLL ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animated-section');
+            if (!animatedElements.length) return;
+
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { 
+                threshold: 0.1
+            });
+
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
