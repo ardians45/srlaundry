@@ -13,11 +13,21 @@
         .bg-primary { background-color: #c00000; }
         .hover-bg-primary:hover { background-color: #a00000; }
         .border-primary { border-color: #c00000; }
+        .accent-color { color: #DAA520; }
 
-        /* Style untuk Tab */
         .tab-button.active {
             background-color: #c00000;
             color: white;
+        }
+
+        /* Style untuk Tombol Pilihan Harga */
+        .price-toggle-button {
+            transition: all 0.3s ease-in-out;
+        }
+        .price-toggle-button.active {
+            background-color: #c00000;
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(192, 0, 0, 0.39);
         }
 
         /* -- KODE ANIMASI -- */
@@ -68,50 +78,30 @@
     </header>
 
     <main class="container mx-auto px-6 py-16">
-        <div class="text-center mb-16 animated-section is-visible">
+        <div class="text-center mb-12 animated-section is-visible">
             <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800">Layanan & Daftar Harga</h1>
-            <p class="text-gray-600 mt-4 text-lg max-w-2xl mx-auto">Kami menyediakan berbagai pilihan layanan dengan harga transparan, dirancang untuk setiap kebutuhan Anda.</p>
+            <p class="text-gray-600 mt-4 text-lg max-w-2xl mx-auto">Kami menyediakan berbagai pilihan layanan dengan harga transparan. Silakan pilih lokasi Anda untuk melihat harga yang berlaku.</p>
+        </div>
+        
+        <div class="animated-section flex justify-center mb-12">
+            <div class="bg-white p-2 rounded-full shadow-md">
+                <button class="price-toggle-button active font-semibold px-6 py-2 rounded-full" data-target="harga-umum">
+                    <i class="fas fa-tags mr-2"></i>Harga Umum
+                </button>
+                <button class="price-toggle-button text-gray-600 font-semibold px-6 py-2 rounded-full" data-target="harga-paninggilan">
+                    <i class="fas fa-star mr-2"></i>Promo Paninggilan
+                </button>
+            </div>
         </div>
 
-        <div class="space-y-16">
-            <div class="animated-section grid lg:grid-cols-3 gap-8 items-start">
-                <div class="lg:col-span-2 bg-white p-8 rounded-2xl shadow-xl">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800 flex items-center"><i class="fas fa-tshirt primary-color mr-3"></i>Self Service</h3>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left">
-                            <thead class="border-b-2 border-gray-200">
-                                <tr>
-                                    <th class="p-3 font-semibold text-gray-600">Layanan</th>
-                                    <th class="p-3 font-semibold text-gray-600 text-right">Harga</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="border-b">
-                                    <td class="p-4">Cuci Aja / 7KG (1 Koin) <p class="text-sm text-gray-500">+/- 30 Menit</p></td>
-                                    <td class="p-4 font-bold text-right text-lg primary-color">Rp 10.000,-</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-4">Cuci Kering / 7KG (2 Koin) <p class="text-sm text-gray-500">+/- 1 Jam</p></td>
-                                    <td class="p-4 font-bold text-right text-lg primary-color">Rp 20.000,-</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p class="text-sm text-gray-500 mt-4 italic">*Note: Belum termasuk sabun & pewangi.</p>
+        <div>
+            <div id="harga-umum" class="price-panel space-y-12">
+                <div class="animated-item grid lg:grid-cols-3 gap-8 items-start">
+                    <div class="lg:col-span-2 bg-white p-8 rounded-2xl shadow-xl"><h3 class="text-2xl font-bold mb-4 text-gray-800 flex items-center"><i class="fas fa-tshirt primary-color mr-3"></i>Self Service</h3><div class="overflow-x-auto"><table class="w-full text-left"><thead class="border-b-2 border-gray-200"><tr><th class="p-3 font-semibold text-gray-600">Layanan</th><th class="p-3 font-semibold text-gray-600 text-right">Harga</th></tr></thead><tbody><tr class="border-b"><td class="p-4">Cuci Aja / 7KG (1 Koin) <p class="text-sm text-gray-500">+/- 30 Menit</p></td><td class="p-4 font-bold text-right text-lg primary-color">Rp 10.000,-</td></tr><tr><td class="p-4">Cuci Kering / 7KG (2 Koin) <p class="text-sm text-gray-500">+/- 1 Jam</p></td><td class="p-4 font-bold text-right text-lg primary-color">Rp 20.000,-</td></tr></tbody></table></div><p class="text-sm text-gray-500 mt-4 italic">*Note: Belum termasuk sabun & pewangi.</p></div>
+                    <div class="bg-primary text-white p-8 rounded-2xl shadow-xl"><h3 class="text-2xl font-bold mb-4 flex items-center"><i class="fas fa-shopping-basket mr-3"></i>Kebutuhan Lain</h3><ul class="space-y-3"><li class="flex justify-between border-b border-red-500/50 pb-2"><span>Detergen Saset</span> <span class="font-semibold">Rp 1.000</span></li><li class="flex justify-between border-b border-red-500/50 pb-2"><span>Detergen Botol</span> <span class="font-semibold">Rp 2.500</span></li><li class="flex justify-between border-b border-red-500/50 pb-2"><span>Pewangi Saset</span> <span class="font-semibold">Rp 1.000</span></li><li class="flex justify-between border-b border-red-500/50 pb-2"><span>Proclin</span> <span class="font-semibold">Rp 1.500</span></li><li class="flex justify-between"><span>Plastik Jumbo</span> <span class="font-semibold">Rp 2.000</span></li></ul></div>
                 </div>
-                <div class="bg-primary text-white p-8 rounded-2xl shadow-xl">
-                    <h3 class="text-2xl font-bold mb-4 flex items-center"><i class="fas fa-shopping-basket mr-3"></i>Kebutuhan Lain</h3>
-                     <ul class="space-y-3">
-                        <li class="flex justify-between border-b border-red-500/50 pb-2"><span>Detergen Saset</span> <span class="font-semibold">Rp 1.000</span></li>
-                        <li class="flex justify-between border-b border-red-500/50 pb-2"><span>Detergen Botol</span> <span class="font-semibold">Rp 2.500</span></li>
-                        <li class="flex justify-between border-b border-red-500/50 pb-2"><span>Pewangi Saset</span> <span class="font-semibold">Rp 1.000</span></li>
-                        <li class="flex justify-between border-b border-red-500/50 pb-2"><span>Proclin</span> <span class="font-semibold">Rp 1.500</span></li>
-                        <li class="flex justify-between"><span>Plastik Jumbo</span> <span class="font-semibold">Rp 2.000</span></li>
-                    </ul>
-                </div>
-            </div>
 
-            <div class="animated-section bg-white p-8 rounded-2xl shadow-xl">
+                <div class="animated-section bg-white p-8 rounded-2xl shadow-xl">
                 <h3 class="text-2xl font-bold mb-1 text-gray-800 flex items-center"><i class="fas fa-hand-holding-heart primary-color mr-3"></i>Drop Off Service</h3>
                 <p class="text-gray-500 mb-6">Biarkan kami yang bekerja. Praktis dan profesional.</p>
 
@@ -170,6 +160,52 @@
                     </div>
                 </div>
             </div>
+            </div>
+
+            <div id="harga-paninggilan" class="price-panel hidden space-y-12">
+                <div class="animated-item bg-white p-8 rounded-2xl shadow-xl">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 flex items-center"><i class="fas fa-tshirt primary-color mr-3"></i>Self Service (Promo Opening)</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                             <thead class="border-b-2 border-gray-200"><tr><th class="p-3 font-semibold text-gray-600">Layanan</th><th class="p-3 font-semibold text-gray-600 text-right">Harga</th></tr></thead>
+                             <tbody>
+                                 <tr class="border-b"><td class="p-4">Cuci Kering / 7 Kg</td><td class="p-4 font-bold text-right text-lg primary-color">Rp 20.000,-</td></tr>
+                                 <tr class="border-b"><td class="p-4">Cuci / 7 Kg</td><td class="p-4 font-bold text-right text-lg primary-color">Rp 10.000,-</td></tr>
+                                 <tr><td class="p-4">Kering / 7 Kg</td><td class="p-4 font-bold text-right text-lg primary-color">Rp 10.000,-</td></tr>
+                             </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="animated-item delay-200 bg-white p-8 rounded-2xl shadow-xl">
+                    <h3 class="text-2xl font-bold mb-1 text-gray-800 flex items-center"><i class="fas fa-hand-holding-heart primary-color mr-3"></i>Drop Off (Promo Opening)</h3>
+                    <p class="text-gray-500 mb-4">(Free Sabun, Parfum)</p>
+                     <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                             <thead class="border-b-2 border-gray-200"><tr><th class="p-3 font-semibold text-gray-600">Layanan</th><th class="p-3 font-semibold text-gray-600 text-right">Harga</th></tr></thead>
+                             <tbody>
+                                 <tr class="border-b"><td class="p-4">Cuci Lipat / 5 Kg</td><td class="p-4 font-bold text-right text-lg primary-color">Rp 30.000,-</td></tr>
+                                 <tr class="border-b"><td class="p-4">Cuci Lipat / 7 Kg</td><td class="p-4 font-bold text-right text-lg primary-color">Rp 35.000,-</td></tr>
+                                 <tr class="border-b"><td class="p-4">Cuci Setrika / 5 Kg</td><td class="p-4 font-bold text-right text-lg primary-color">Rp 40.000,-</td></tr>
+                                 <tr class="border-b"><td class="p-4">Cuci Setrika / 7 Kg</td><td class="p-4 font-bold text-right text-lg primary-color">Rp 50.000,-</td></tr>
+                                 <tr class="border-b"><td class="p-4">Setrika Saja / Kg (min. 3 Kg)</td><td class="p-4 font-bold text-right text-lg primary-color">Rp 6.000,-</td></tr>
+                                 <tr><td class="p-4">Bed Cover / pc</td><td class="p-4 font-bold text-right text-lg primary-color">start from Rp 30.000,-</td></tr>
+                             </tbody>
+                        </table>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-4 italic">*Terima juga sepatu, karpet, selimut, tas, dll.</p>
+                </div>
+
+                <div class="animated-item delay-400 bg-red-50 p-8 rounded-2xl shadow-xl text-center">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Keunggulan Promo Paninggilan</h3>
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-white p-4 rounded-lg shadow"><i class="fas fa-motorcycle text-3xl primary-color mb-2"></i><p class="font-semibold">Free Antar Jemput</p></div>
+                        <div class="bg-white p-4 rounded-lg shadow"><i class="fas fa-calendar-day text-3xl primary-color mb-2"></i><p class="font-semibold">1 Hari Jadi</p></div>
+                        <div class="bg-white p-4 rounded-lg shadow"><i class="fas fa-gift text-3xl primary-color mb-2"></i><p class="font-semibold">10x Laundry Gratis 1x</p></div>
+                        <div class="bg-white p-4 rounded-lg shadow"><i class="fas fa-hand-sparkles text-3xl primary-color mb-2"></i><p class="font-semibold">Bisa Pick Up Service</p></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -205,7 +241,7 @@
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-clock mt-1 mr-3 w-4 text-center"></i>
-                            <span>08:00 – 21:00 WIB<br>(Buka Setiap Hari)</span>
+                            <span>07:00 – 21:00 WIB<br>(Buka Setiap Hari)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-envelope mt-1 mr-3 w-4 text-center"></i>
@@ -242,9 +278,10 @@
             });
         }
         
-        // --- SCRIPT ANIMASI SAAT SCROLL ---
+        // --- SCRIPT UNTUK ANIMASI & TOMBOL HARGA ---
         document.addEventListener('DOMContentLoaded', function() {
-            const animatedElements = document.querySelectorAll('.animated-section');
+            // Animasi Scroll
+            const animatedElements = document.querySelectorAll('.animated-section, .animated-item');
             if (animatedElements.length) {
                 const observer = new IntersectionObserver((entries, observer) => {
                     entries.forEach(entry => {
@@ -257,7 +294,35 @@
                 animatedElements.forEach(element => observer.observe(element));
             }
 
-            // --- SCRIPT UNTUK TAB INTERAKTIF ---
+            // Fungsi Tombol Pilihan Harga
+            const priceToggleButtons = document.querySelectorAll('.price-toggle-button');
+            const pricePanels = document.querySelectorAll('.price-panel');
+
+            priceToggleButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Nonaktifkan semua tombol
+                    priceToggleButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.classList.add('text-gray-600');
+                    });
+                    
+                    // Aktifkan tombol yang diklik
+                    button.classList.add('active');
+                    button.classList.remove('text-gray-600');
+
+                    // Sembunyikan semua panel harga
+                    pricePanels.forEach(panel => panel.classList.add('hidden'));
+
+                    // Tampilkan panel harga yang sesuai
+                    const targetPanel = document.getElementById(button.dataset.target);
+                    if (targetPanel) {
+                        targetPanel.classList.remove('hidden');
+                    }
+                });
+            });
+        });
+
+         // --- SCRIPT UNTUK TAB INTERAKTIF ---
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabPanels = document.querySelectorAll('.tab-panel');
 
@@ -279,7 +344,7 @@
                     }
                 });
             });
-        });
+    
     </script>
 </body>
 </html>
