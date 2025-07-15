@@ -41,6 +41,22 @@
         .is-visible {
             animation: fadeInUp 0.8s ease-out forwards;
         }
+
+         @keyframes float1 {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+    }
+    @keyframes float2 {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(10px); }
+    }
+    @keyframes float3 {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(10deg); }
+    }
+    .animate-float1 { animation: float1 4s ease-in-out infinite; }
+    .animate-float2 { animation: float2 5s ease-in-out infinite; }
+    .animate-float3 { animation: float3 6s ease-in-out infinite; }
     </style>
 </head>
 <body class="bg-gray-100 font-sans">
@@ -76,67 +92,74 @@
 </header>
 
     <main class="overflow-x-hidden">
-        <section class="relative bg-red-50 py-20 md:py-32 hero-textured">
-            <div class="container mx-auto px-6 text-center z-10 relative">
-                <h1 class="text-4xl md:text-6xl font-black text-gray-900 leading-tight">Pakaian Bersih, Hidup Praktis.</h1>
-                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Selamat datang di SR Laundry Ciledug! Nikmati layanan laundry modern yang cepat, higienis, dan terjangkau. Selesai hanya dalam 2 jam.</p>
-                <a href="booking.html" class="mt-8 inline-block bg-primary text-white font-bold text-lg px-8 py-4 rounded-full hover-bg-primary transition shadow-xl transform hover:scale-105">
-                    <i class="fab fa-whatsapp"></i> Booking Sekarang
-                </a>
-            </div>
-        </section>
+        <section class="relative bg-red-50 py-20 md:py-32 overflow-hidden">
+        <div class="container mx-auto px-6 text-center z-10 relative">
+            <h1 class="text-4xl md:text-6xl font-black text-gray-900 leading-tight">Pakaian Bersih, Hidup Praktis.</h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            Selamat datang di SR Laundry Ciledug! Nikmati layanan laundry modern yang cepat, higienis, dan terjangkau. Selesai hanya dalam 2 jam.
+            </p>
+            <a href="booking.html" class="mt-8 inline-block bg-primary text-white font-bold text-lg px-8 py-4 rounded-full hover-bg-primary transition shadow-xl transform hover:scale-105">
+            <i class="fab fa-whatsapp"></i> Booking Sekarang
+            </a>
+        </div>
+
+        <!-- FLOATING ICONS -->
+            
+            <img src="img/icons/gelembung.png" class="absolute top-6 right-12 w-14 md:w-20 animate-float2" alt="Mesin Cuci">
+            
+</section>
 
         <section class="animated-section py-20 bg-white">
-            <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="img/mesin.jpg" alt="Mesin Laundry Modern" class="rounded-2xl shadow-2xl w-full">
-                </div>
-                <div class="text-gray-700">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Kenapa Kami Pilihan Terbaik?</h2>
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <i class="fas fa-user-shield text-3xl primary-color mt-1"></i>
-                            <div>
-                                <h3 class="text-xl font-semibold text-gray-900">100% Higienis & Privat</h3>
-                                <p class="text-gray-600">Satu mesin hanya untuk satu pelanggan. Kami jamin pakaian Anda tidak akan tercampur dan selalu steril.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fas fa-rocket text-3xl primary-color mt-1"></i>
-                            <div>
-                                <h3 class="text-xl font-semibold text-gray-900">Super Cepat, Hanya 2 Jam</h3>
-                                <p class="text-gray-600">Proses cuci dan kering selesai dalam waktu singkat. Sempurna untuk Anda yang sibuk dan dinamis.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fas fa-tags text-3xl primary-color mt-1"></i>
-                            <div>
-                                <h3 class="text-xl font-semibold text-gray-900">Promo & Harga Terbaik</h3>
-                                <p class="text-gray-600">Nikmati berbagai promo menarik dan harga yang sangat terjangkau untuk semua layanan kami.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-<!-- SECTION BARU: Perawatan Mesin -->
-    <section class="animated-section py-20 bg-gray-100">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Mesin Cuci Selalu Bersih</h2>
-                <p class="text-lg text-gray-600 mb-6">Di SR Laundry, kami rutin melakukan pembersihan dan perawatan mesin cuci untuk menjamin kebersihan maksimal setiap cucian pelanggan. Mesin dibersihkan secara berkala dari sisa residu deterjen dan kotoran agar pakaian Anda tetap higienis dan bebas bau apek.</p>
-                <ul class="list-disc ml-6 text-gray-700 space-y-2">
-                    <li>Sanitasi mesin setiap hari</li>
-                    <li>Filter dan tabung dicek secara berkala</li>
-                    <li>Menggunakan cairan pembersih khusus non-kimia berbahaya</li>
-                </ul>
-            </div>
-            <div>
-                <img src="img/maintenace.jpg" alt="Pembersihan Mesin Cuci" class="rounded-2xl shadow-xl w-full">
-            </div>
+  <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="flex justify-center">
+      <img src="img/mesin.jpg" alt="Mesin Laundry Modern" class="rounded-2xl shadow-2xl w-full max-w-[500px] object-cover">
+    </div>
+    <div class="text-gray-700">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Kenapa Kami Pilihan Terbaik?</h2>
+      <div class="space-y-6">
+        <div class="flex items-start gap-4">
+          <i class="fas fa-user-shield text-3xl primary-color mt-1"></i>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900">100% Higienis & Privat</h3>
+            <p class="text-gray-600">Satu mesin hanya untuk satu pelanggan. Kami jamin pakaian Anda tidak akan tercampur dan selalu steril.</p>
+          </div>
         </div>
-    </section>
+        <div class="flex items-start gap-4">
+          <i class="fas fa-rocket text-3xl primary-color mt-1"></i>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900">Super Cepat, Hanya 2 Jam</h3>
+            <p class="text-gray-600">Proses cuci dan kering selesai dalam waktu singkat. Sempurna untuk Anda yang sibuk dan dinamis.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <i class="fas fa-tags text-3xl primary-color mt-1"></i>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-900">Promo & Harga Terbaik</h3>
+            <p class="text-gray-600">Nikmati berbagai promo menarik dan harga yang sangat terjangkau untuk semua layanan kami.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="animated-section py-20 bg-gray-100">
+  <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Mesin Cuci Selalu Bersih</h2>
+      <p class="text-lg text-gray-600 mb-6">Di SR Laundry, kami rutin melakukan pembersihan dan perawatan mesin cuci untuk menjamin kebersihan maksimal setiap cucian pelanggan. Mesin dibersihkan secara berkala dari sisa residu deterjen dan kotoran agar pakaian Anda tetap higienis dan bebas bau apek.</p>
+      <ul class="list-disc ml-6 text-gray-700 space-y-2">
+        <li>Sanitasi mesin setiap hari</li>
+        <li>Filter dan tabung dicek secara berkala</li>
+        <li>Menggunakan cairan pembersih khusus non-kimia berbahaya</li>
+      </ul>
+    </div>
+    <div class="flex justify-center">
+      <img src="img/maintenace.jpg" alt="Pembersihan Mesin Cuci" class="rounded-2xl shadow-xl w-full max-w-[500px] object-cover">
+    </div>
+  </div>
+</section>
 
         <section class="animated-section py-20 bg-gray-100">
             <div class="container mx-auto px-6">
