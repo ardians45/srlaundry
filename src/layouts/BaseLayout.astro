@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -27,7 +27,7 @@ const {
     
     <title>{title} | SR Laundry Express</title>
     <meta name="description" content={description} />
-    <ViewTransitions />
+    <ClientRouter />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
