@@ -1,0 +1,119 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+
+const navItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Tentang', href: '/tentang' },
+  { name: 'Layanan & Harga', href: '/layanan' },
+  { name: 'Promo', href: '/promo' },
+  { name: 'Testimoni', href: '/testimoni' },
+  { name: 'Kontak', href: '/kontak' },
+];
+---
+
+<header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-300">
+  <div class="container mx-auto px-6 py-4">
+    <nav class="flex justify-between items-center bg-white/80 backdrop-blur-md border border-white/20 shadow-lg rounded-2xl px-6 py-2">
+      <a href="/" class="flex items-center gap-2 group">
+        <div class="relative overflow-hidden rounded-full shadow-sm border-2 border-white transition-transform group-hover:scale-105">
+          <Image src={logo} alt="SR Laundry Express Logo" class="h-10 w-10 md:h-12 md:w-12 object-cover" />
+        </div>
+        <div class="flex flex-col">
+          <span class="font-black text-red-700 leading-none text-lg md:text-xl uppercase tracking-tighter">SR Laundry</span>
+          <span class="text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-widest">Express & Coin</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden lg:flex items-center gap-1">
+        {navItems.map(item => (
+          <a 
+            href={item.href} 
+            class="px-4 py-2 rounded-xl text-sm font-semibold text-gray-600 hover:text-red-700 hover:bg-red-50 transition-all duration-200"
+          >
+            {item.name}
+          </a>
+        ))}
+        <a 
+          href="/booking" 
+          class="ml-4 bg-red-700 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-red-800 transition-all duration-300 shadow-md hover:shadow-red-200 transform hover:-translate-y-0.5"
+        >
+          Booking
+        </a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button id="mobile-menu-toggle" class="lg:hidden p-2 text-gray-700" aria-label="Toggle Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-0 bg-white z-[60] flex flex-col p-8 transition-all duration-500 translate-x-full lg:hidden">
+    <div class="flex justify-between items-center mb-12">
+      <div class="flex items-center gap-2">
+        <Image src={logo} alt="Logo" class="h-10 w-10 rounded-full" />
+        <span class="font-black text-red-700 text-xl tracking-tighter">SR LAUNDRY</span>
+      </div>
+      <button id="mobile-menu-close" class="p-2 text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    
+    <div class="flex flex-col gap-6">
+      {navItems.map(item => (
+        <a href={item.href} class="text-2xl font-bold text-gray-800 hover:text-red-700 transition-colors">
+          {item.name}
+        </a>
+      ))}
+      <a 
+        href="/booking" 
+        class="mt-4 bg-red-700 text-white text-center py-4 rounded-2xl font-bold text-xl shadow-xl active:scale-95 transition-transform"
+      >
+        Booking Sekarang
+      </a>
+    </div>
+
+    <div class="mt-auto flex flex-col gap-4 text-center">
+      <p class="text-gray-500 font-medium italic">"Pakaian Bersih, Hidup Praktis"</p>
+      <div class="flex justify-center gap-4">
+        <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-gray-600">
+          <i class="fab fa-instagram text-xl"></i>
+        </a>
+        <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-gray-600">
+          <i class="fab fa-whatsapp text-xl"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const close = document.getElementById('mobile-menu-close');
+  const menu = document.getElementById('mobile-menu');
+  const header = document.getElementById('main-header');
+
+  toggle?.addEventListener('click', () => {
+    menu?.classList.remove('translate-x-full');
+  });
+
+  close?.addEventListener('click', () => {
+    menu?.classList.add('translate-x-full');
+  });
+
+  // Header scroll effect
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header?.classList.add('py-2');
+    } else {
+      header?.classList.remove('py-2');
+    }
+  });
+</script>

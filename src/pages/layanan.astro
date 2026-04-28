@@ -1,0 +1,272 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pricesUmum = {
+  selfService: [
+    { name: 'Cuci Aja / 7KG (1 Koin)', time: '+/- 30 Menit', price: 'Rp 10.000,-' },
+    { name: 'Cuci Kering / 7KG (2 Koin)', time: '+/- 1 Jam', price: 'Rp 20.000,-' },
+  ],
+  kebutuhan: [
+    { name: 'Detergen Saset', price: 'Rp 1.000' },
+    { name: 'Detergen Botol', price: 'Rp 2.500' },
+    { name: 'Pewangi Saset', price: 'Rp 1.000' },
+    { name: 'Proclin', price: 'Rp 1.500' },
+    { name: 'Plastik Jumbo', price: 'Rp 2.000' },
+  ],
+  dropOffKiloan: [
+    { group: 'Cuci Kering Lipat' },
+    { name: 'Per 5KG', time: '+/- 2 Jam', price: 'Rp 30.000,-' },
+    { name: 'Per 7KG', time: '+/- 2 Jam', price: 'Rp 35.000,-' },
+    { group: 'Cuci + Setrika (min. 3kg)' },
+    { name: 'Reguler (3 Hari)', time: '3 Hari', price: 'Rp 7.000,-/kg' },
+    { name: 'Reguler (2 Hari)', time: '2 Hari', price: 'Rp 8.000,-/kg' },
+    { name: 'Express (6 Jam)', time: '6 Jam', price: 'Rp 15.000,-/kg' },
+  ]
+};
+---
+
+<BaseLayout title="Daftar Harga & Layanan Laundry Express Ciledug" description="Cek daftar harga laundry kiloan, satuan, dan self-service terlengkap di SR Laundry Ciledug. Kami melayani cuci kering lipat, setrika, hingga laundry sepatu.">
+  
+  <section class="pt-32 pb-20 bg-red-50">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-black text-gray-900 mb-6">Layanan & Harga</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">Kami menyediakan berbagai pilihan layanan dengan harga transparan. Pilih kategori yang Anda butuhkan.</p>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      
+      <!-- Toggle Location/Promo -->
+      <div class="flex justify-center mb-12">
+        <div class="inline-flex bg-gray-100 p-1.5 rounded-2xl border border-gray-200 shadow-inner">
+          <button class="tab-toggle active px-6 py-3 rounded-xl font-bold transition-all" data-target="harga-umum">
+            Harga Umum
+          </button>
+          <button class="tab-toggle px-6 py-3 rounded-xl font-bold transition-all text-gray-500 hover:text-gray-700" data-target="harga-promo">
+            Promo Paninggilan
+          </button>
+        </div>
+      </div>
+
+      <div id="harga-umum" class="price-panel">
+        <div class="grid lg:grid-cols-3 gap-8 mb-12">
+          <!-- Self Service -->
+          <div class="lg:col-span-2 bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+            <div class="flex items-center gap-3 mb-8">
+              <div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-red-50 text-red-700">
+                <i class="fas fa-tshirt text-xl"></i>
+              </div>
+              <h2 class="text-2xl font-black">Self Service</h2>
+            </div>
+            
+            <div class="overflow-x-auto">
+              <table class="w-full text-left">
+                <thead>
+                  <tr class="border-b border-gray-100">
+                    <th class="py-4 font-bold text-gray-400 uppercase text-xs tracking-widest">Layanan</th>
+                    <th class="py-4 font-bold text-gray-400 uppercase text-xs tracking-widest text-right">Harga</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-50">
+                  {pricesUmum.selfService.map(item => (
+                    <tr>
+                      <td class="py-6">
+                        <p class="font-bold text-gray-900">{item.name}</p>
+                        <p class="text-sm text-gray-500">{item.time}</p>
+                      </td>
+                      <td class="py-6 text-right">
+                        <span class="text-xl font-black text-red-700">{item.price}</span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p class="mt-6 text-sm text-gray-400 italic font-medium">* Belum termasuk sabun & pewangi</p>
+          </div>
+
+          <!-- Kebutuhan Lain -->
+          <div class="bg-red-700 rounded-3xl p-8 text-white shadow-xl shadow-red-100">
+            <h3 class="text-2xl font-black mb-8">Kebutuhan Lain</h3>
+            <ul class="space-y-6">
+              {pricesUmum.kebutuhan.map(item => (
+                <li class="flex justify-between items-center pb-4 border-b border-white/10 last:border-0">
+                  <span class="font-bold text-red-100">{item.name}</span>
+                  <span class="font-black text-lg">{item.price}</span>
+                </li>
+              ))}
+            </ul>
+            <div class="mt-10 p-4 bg-white/10 rounded-2xl border border-white/10">
+              <p class="text-sm font-medium leading-relaxed opacity-80">
+                Tersedia juga paket bundling sabun & parfum premium untuk hasil lebih maksimal.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Drop Off Section -->
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 flex items-center justify-center rounded-2xl bg-red-50 text-red-700">
+                <i class="fas fa-hand-holding-heart text-xl"></i>
+              </div>
+              <div>
+                <h2 class="text-2xl font-black">Drop Off Service</h2>
+                <p class="text-gray-500 font-medium">Biarkan kami yang bekerja. Praktis dan profesional.</p>
+              </div>
+            </div>
+            
+            <div class="flex bg-gray-50 p-1 rounded-xl">
+              <button class="sub-tab active px-4 py-2 rounded-lg font-bold text-sm" data-target="kiloan">Kiloan</button>
+              <button class="sub-tab px-4 py-2 rounded-lg font-bold text-sm text-gray-400" data-target="satuan">Satuan</button>
+            </div>
+          </div>
+
+          <div id="panel-kiloan" class="sub-panel">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="p-4 rounded-l-xl font-bold text-gray-500 uppercase text-xs tracking-widest">Layanan</th>
+                    <th class="p-4 font-bold text-gray-500 uppercase text-xs tracking-widest">Waktu</th>
+                    <th class="p-4 rounded-r-xl font-bold text-gray-500 uppercase text-xs tracking-widest text-right">Harga</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-50">
+                  {pricesUmum.dropOffKiloan.map(item => (
+                    item.group ? (
+                      <tr class="bg-red-50/30">
+                        <td colspan="3" class="py-4 px-4 font-black text-red-800 uppercase text-[10px] tracking-widest">{item.group}</td>
+                      </tr>
+                    ) : (
+                      <tr class="hover:bg-gray-50/50 transition-colors">
+                        <td class="py-5 px-4 font-bold text-gray-900">{item.name}</td>
+                        <td class="py-5 px-4 text-gray-500 font-medium">{item.time}</td>
+                        <td class="py-5 px-4 text-right font-black text-red-700">{item.price}</td>
+                      </tr>
+                    )
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="panel-satuan" class="sub-panel hidden">
+            <!-- Add Satuan Items from old/layanan.html -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { name: 'Seprei (1 set)', price: 'Rp 15.000,-' },
+                { name: 'Jaket Bahan Kain', price: 'Rp 25.000,-' },
+                { name: 'Jas / Kebaya', price: 'Rp 30.000,-' },
+                { name: 'Bedcover', price: 'Rp 30rb - 50rb' },
+                { name: 'Selimut', price: 'Rp 10rb - 25rb' },
+                { name: 'Sepatu', price: 'Rp 35.000,-' }
+              ].map(item => (
+                <div class="p-6 rounded-2xl border border-gray-100 bg-gray-50/50 flex justify-between items-center">
+                  <span class="font-bold text-gray-900">{item.name}</span>
+                  <span class="font-black text-red-700">{item.price}</span>
+                </div>
+              ))}
+            </div>
+            <p class="mt-8 text-center text-gray-500 font-medium italic">Item lainnya? Hubungi kami via WhatsApp!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Promo Panel (Hidden by default) -->
+      <div id="harga-promo" class="price-panel hidden">
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
+           <div class="inline-block bg-amber-400 text-gray-900 text-xs font-black px-3 py-1 rounded-full mb-4 uppercase tracking-widest">Special Opening Promo</div>
+           <h2 class="text-3xl font-black mb-8">Promo Cabang Paninggilan</h2>
+           <div class="grid md:grid-cols-2 gap-8">
+             <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100">
+               <h3 class="font-black text-xl mb-6 flex items-center gap-2"><i class="fas fa-coins text-red-700"></i> Self Service</h3>
+               <ul class="space-y-4">
+                 <li class="flex justify-between border-b border-gray-200 pb-2"><span>Cuci Kering / 7 Kg</span> <span class="font-black text-red-700">Rp 20.000</span></li>
+                 <li class="flex justify-between border-b border-gray-200 pb-2"><span>Cuci Saja / 7 Kg</span> <span class="font-black text-red-700">Rp 10.000</span></li>
+                 <li class="flex justify-between"><span>Kering Saja / 7 Kg</span> <span class="font-black text-red-700">Rp 10.000</span></li>
+               </ul>
+             </div>
+             <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100">
+               <h3 class="font-black text-xl mb-6 flex items-center gap-2"><i class="fas fa-shopping-bag text-red-700"></i> Drop Off (Free Sabun)</h3>
+               <ul class="space-y-4">
+                 <li class="flex justify-between border-b border-gray-200 pb-2"><span>Cuci Lipat / 5 Kg</span> <span class="font-black text-red-700">Rp 30.000</span></li>
+                 <li class="flex justify-between border-b border-gray-200 pb-2"><span>Cuci Setrika / 5 Kg</span> <span class="font-black text-red-700">Rp 40.000</span></li>
+                 <li class="flex justify-between"><span>Setrika Saja / Kg</span> <span class="font-black text-red-700">Rp 6.000</span></li>
+               </ul>
+             </div>
+           </div>
+           
+           <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6">
+             {[
+               { icon: 'fa-motorcycle', text: 'Free Antar Jemput' },
+               { icon: 'fa-calendar-day', text: '1 Hari Jadi' },
+               { icon: 'fa-gift', text: '10x Gratis 1x' },
+               { icon: 'fa-hand-sparkles', text: 'Pick Up Service' }
+             ].map(item => (
+               <div class="text-center p-6 bg-red-50 rounded-2xl border border-red-100">
+                 <i class={`fas ${item.icon} text-2xl text-red-700 mb-3`}></i>
+                 <p class="font-bold text-gray-900 text-sm">{item.text}</p>
+               </div>
+             ))}
+           </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  // Tab Toggle Logic
+  const toggles = document.querySelectorAll('.tab-toggle');
+  const panels = document.querySelectorAll('.price-panel');
+
+  toggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      toggles.forEach(t => t.classList.remove('active', 'bg-white', 'shadow-sm', 'text-gray-900'));
+      toggles.forEach(t => t.classList.add('text-gray-500'));
+      
+      btn.classList.add('active', 'bg-white', 'shadow-sm', 'text-gray-900');
+      btn.classList.remove('text-gray-500');
+      
+      const target = btn.getAttribute('data-target');
+      panels.forEach(p => p.classList.add('hidden'));
+      document.getElementById(target)?.classList.remove('hidden');
+    });
+  });
+
+  // Sub Tab Logic (Kiloan/Satuan)
+  const subTabs = document.querySelectorAll('.sub-tab');
+  const subPanels = document.querySelectorAll('.sub-panel');
+
+  subTabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      subTabs.forEach(t => t.classList.remove('active', 'bg-white', 'shadow-sm', 'text-gray-900'));
+      subTabs.forEach(t => t.classList.add('text-gray-400'));
+      
+      btn.classList.add('active', 'bg-white', 'shadow-sm', 'text-gray-900');
+      btn.classList.remove('text-gray-400');
+      
+      const target = btn.getAttribute('data-target');
+      subPanels.forEach(p => p.classList.add('hidden'));
+      document.getElementById(`panel-${target}`)?.classList.remove('hidden');
+    });
+  });
+</script>
+
+<style>
+  .tab-toggle.active {
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    color: #111827;
+  }
+  .sub-tab.active {
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+    color: #111827;
+  }
+</style>

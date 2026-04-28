@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Booking Laundry Antar Jemput Ciledug via WhatsApp" description="Booking layanan antar jemput SR Laundry Ciledug sekarang via WhatsApp. Praktis, tim kami akan menjemput pakaian kotor Anda tepat waktu dan mengantarnya kembali.">
+  
+  <section class="pt-32 pb-20 bg-red-50">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-black text-gray-900 mb-6">Booking Sekarang</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">Klik tombol di bawah untuk memesan slot atau layanan antar-jemput melalui WhatsApp. Cepat dan mudah!</p>
+    </div>
+  </section>
+
+  <section class="py-24">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <div class="bg-white rounded-[3rem] shadow-2xl shadow-red-100 overflow-hidden border border-gray-100 flex flex-col md:flex-row items-stretch">
+        <div class="md:w-1/2 p-12 flex flex-col justify-center bg-red-700 text-white">
+          <h2 class="text-3xl font-black mb-6">Informasi Booking</h2>
+          <ul class="space-y-6">
+            <li class="flex gap-4">
+              <div class="w-8 h-8 shrink-0 flex items-center justify-center rounded-full bg-white/20 text-white">
+                <i class="fas fa-check text-xs"></i>
+              </div>
+              <p class="font-medium">Tersedia setiap hari selama jam operasional (07:00 - 21:00).</p>
+            </li>
+            <li class="flex gap-4">
+              <div class="w-8 h-8 shrink-0 flex items-center justify-center rounded-full bg-white/20 text-white">
+                <i class="fas fa-check text-xs"></i>
+              </div>
+              <p class="font-medium">Layanan antar-jemput tersedia untuk area Ciledug & sekitarnya.</p>
+            </li>
+            <li class="flex gap-4">
+              <div class="w-8 h-8 shrink-0 flex items-center justify-center rounded-full bg-white/20 text-white">
+                <i class="fas fa-check text-xs"></i>
+              </div>
+              <p class="font-medium">Konfirmasi otomatis setelah pesan dikirim ke admin.</p>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="md:w-1/2 p-12 flex flex-col justify-center items-center text-center">
+          <div class="w-20 h-20 bg-green-100 text-green-600 rounded-3xl flex items-center justify-center mb-8">
+            <i class="fab fa-whatsapp text-4xl"></i>
+          </div>
+          <h3 class="text-2xl font-black text-gray-900 mb-4">Pesan via WhatsApp</h3>
+          <p class="text-gray-500 mb-8 font-medium">Klik tombol di bawah untuk mulai percakapan dengan admin kami.</p>
+          <a 
+            href="https://wa.me/6281297252322?text=Halo%20SR%20Laundry%2C%20saya%20ingin%20booking%20layanan.%0A%0ANama%3A%20%0ALayanan%3A%20(Self-Service%2FDrop-Off)%0AHari%2FTanggal%3A%20%0AJam%3A%20" 
+            target="_blank" 
+            class="w-full py-5 bg-green-500 text-white rounded-2xl font-black text-xl hover:bg-green-600 transition-all shadow-xl shadow-green-100 flex items-center justify-center gap-3 active:scale-95"
+          >
+            Booking Sekarang
+          </a>
+          <p class="mt-6 text-xs text-gray-400 font-bold uppercase tracking-widest">Respon cepat dalam hitungan menit</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

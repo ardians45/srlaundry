@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const promos = [
+  {
+    tag: 'Promo Loyalitas',
+    title: 'Gratis 1x Cuci',
+    desc: 'Kumpulkan **10 stamp** dari layanan Self-Service dan tukarkan dengan **1x Cuci Gratis** pada kunjungan Anda berikutnya. Semakin sering nyuci, semakin untung!',
+    icon: 'fa-gift',
+    gradient: 'from-red-600 to-red-800',
+    badge: '10 + 1',
+    badgeText: 'CUCI GRATIS'
+  },
+  {
+    tag: 'Promo Transaksi',
+    title: 'Kupon Undian Berhadiah',
+    desc: 'Setiap transaksi minimal **Rp 25.000**, Anda berhak mendapatkan **1 kupon undian** untuk memenangkan berbagai hadiah menarik di akhir periode.',
+    icon: 'fa-ticket-alt',
+    gradient: 'from-gray-800 to-gray-950',
+    badge: 'HADIAH',
+    badgeText: 'MENANTI ANDA'
+  }
+];
+---
+
+<BaseLayout title="Promo Laundry Ciledug Terbaru & Diskon Spesial" description="Dapatkan promo gratis cuci, diskon loyalitas, dan kupon undian berhadiah di SR Laundry Ciledug. Hemat lebih banyak untuk kebutuhan cuci rutin Anda.">
+  
+  <section class="pt-32 pb-20 bg-red-50">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-black text-gray-900 mb-6">Penawaran Spesial</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">Dirancang khusus untuk Anda, pelanggan setia kami. Jangan lewatkan kesempatan terbatas ini!</p>
+    </div>
+  </section>
+
+  <section class="py-24">
+    <div class="container mx-auto px-6 max-w-6xl space-y-16">
+      
+      {promos.map((p, i) => (
+        <div class="group relative bg-white rounded-[3rem] shadow-sm border border-gray-100 overflow-hidden flex flex-col lg:flex-row items-stretch hover:shadow-2xl hover:shadow-red-100 transition-all duration-500">
+          <div class={`lg:w-1/2 p-12 md:p-16 flex flex-col justify-center ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
+            <span class="inline-block bg-amber-400 text-gray-950 text-xs font-black px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest shadow-sm">
+              {p.tag}
+            </span>
+            <h2 class="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight group-hover:text-red-700 transition-colors">
+              {p.title}
+            </h2>
+            <p class="text-lg text-gray-600 mb-10 leading-relaxed font-medium">
+              {p.desc.split('**').map((text, idx) => idx % 2 === 1 ? <span class="text-gray-900 font-black">{text}</span> : text)}
+            </p>
+            <div>
+              <a href="/booking" class="inline-flex items-center gap-2 bg-red-700 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-red-800 transition-all transform hover:-translate-y-1 active:scale-95 shadow-xl shadow-red-100">
+                Ambil Promo Sekarang <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class={`lg:w-1/2 bg-gradient-to-br ${p.gradient} relative overflow-hidden flex items-center justify-center p-12 min-h-[350px] ${i % 2 === 1 ? 'lg:order-1' : ''}`}>
+             <!-- Decorative icon -->
+             <i class={`fas ${p.icon} absolute text-[250px] text-white/10 -rotate-12 transform group-hover:scale-110 group-hover:rotate-0 transition-transform duration-700`}></i>
+             
+             <div class="relative z-10 text-center">
+               <span class="text-7xl md:text-9xl font-black text-white block mb-2 tracking-tighter drop-shadow-2xl">
+                 {p.badge}
+               </span>
+               <span class="text-xl md:text-2xl font-bold text-white/80 uppercase tracking-[0.2em]">
+                 {p.badgeText}
+               </span>
+             </div>
+          </div>
+        </div>
+      ))}
+
+      <div class="bg-gray-50 rounded-3xl p-8 border-2 border-dashed border-gray-200 text-center">
+        <h3 class="font-black text-gray-900 mb-4">Syarat & Ketentuan</h3>
+        <p class="text-gray-500 max-w-3xl mx-auto font-medium leading-relaxed">
+          🏢 Semua promo berlaku di seluruh cabang SR Laundry. Promo tidak dapat digabungkan dengan penawaran lain dan dapat berubah sewaktu-waktu tanpa pemberitahuan sebelumnya. Hubungi admin untuk informasi lebih lanjut.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
