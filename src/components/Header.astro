@@ -108,11 +108,11 @@ const navItems = [
   // Header scroll effect
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
-      header?.classList.add('py-4', 'bg-white/90', 'backdrop-blur-md', 'shadow-md');
+      header?.classList.add('py-4', 'bg-white', 'shadow-md');
       header?.classList.remove('py-6');
     } else {
       header?.classList.add('py-6');
-      header?.classList.remove('py-4', 'bg-white/90', 'backdrop-blur-md', 'shadow-md');
+      header?.classList.remove('py-4', 'bg-white', 'shadow-md');
     }
   });
 </script>
