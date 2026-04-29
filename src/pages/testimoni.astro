@@ -38,7 +38,9 @@ const testimonials = [
         {testimonials.map(t => (
           <div class="break-inside-avoid bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
             <div class="flex items-center gap-4 mb-6">
-              <img src={`https://i.pravatar.cc/100?u=${t.avatar}`} alt={t.name} class="w-12 h-12 rounded-full border-2 border-red-50" />
+              <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-black text-sm uppercase">
+                {t.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+              </div>
               <div>
                 <p class="font-black text-gray-950 leading-tight">{t.name}</p>
                 <div class="flex text-amber-400 text-[10px] mt-1">

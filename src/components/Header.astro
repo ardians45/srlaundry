@@ -12,34 +12,31 @@ const navItems = [
 ];
 ---
 
-<header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-300">
-  <div class="container mx-auto px-6 py-4">
-    <nav class="flex justify-between items-center bg-white/80 backdrop-blur-md border border-white/20 shadow-lg rounded-2xl px-6 py-2">
+<header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-500 py-6">
+  <div class="container mx-auto px-6">
+    <nav class="flex justify-between items-center transition-all duration-500">
       <a href="/" class="flex items-center gap-2 group">
-        <div class="relative overflow-hidden rounded-full shadow-sm border-2 border-white transition-transform group-hover:scale-105">
-          <Image src={logo} alt="SR Laundry Express Logo" class="h-10 w-10 md:h-12 md:w-12 object-cover" />
-        </div>
         <div class="flex flex-col">
-          <span class="font-black text-red-700 leading-none text-lg md:text-xl uppercase tracking-tighter">SR Laundry</span>
-          <span class="text-[10px] md:text-xs font-bold text-gray-500 uppercase tracking-widest">Express & Coin</span>
+          <span class="font-editorial font-black text-primary leading-none text-2xl uppercase tracking-tighter group-hover:text-primary-light transition-colors">SR LAUNDRY.</span>
+          <span class="text-[8px] font-bold text-gray-400 uppercase tracking-[0.3em]">EXPRESS & COIN</span>
         </div>
       </a>
 
       <!-- Desktop Nav -->
-      <div class="hidden lg:flex items-center gap-1">
+      <div class="hidden lg:flex items-center gap-8">
         {navItems.map(item => (
           <a 
             href={item.href} 
-            class="px-4 py-2 rounded-xl text-sm font-semibold text-gray-600 hover:text-red-700 hover:bg-red-50 transition-all duration-200"
+            class="text-[10px] font-black uppercase tracking-widest text-gray-600 hover:text-primary transition-all duration-200"
           >
             {item.name}
           </a>
         ))}
         <a 
           href="/booking" 
-          class="ml-4 bg-red-700 text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-red-800 transition-all duration-300 shadow-md hover:shadow-red-200 transform hover:-translate-y-0.5"
+          class="bg-primary text-white px-8 py-3 rounded-full font-black text-[10px] uppercase tracking-widest hover:bg-primary-dark transition-all duration-300 shadow-xl"
         >
-          Booking
+          BOOK NOW
         </a>
       </div>
 
@@ -111,9 +108,11 @@ const navItems = [
   // Header scroll effect
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
-      header?.classList.add('py-2');
+      header?.classList.add('py-4', 'bg-white/90', 'backdrop-blur-md', 'shadow-md');
+      header?.classList.remove('py-6');
     } else {
-      header?.classList.remove('py-2');
+      header?.classList.add('py-6');
+      header?.classList.remove('py-4', 'bg-white/90', 'backdrop-blur-md', 'shadow-md');
     }
   });
 </script>

@@ -1,1 +1,78 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #bc0000;
+  --color-primary-light: #ff1a1a;
+  --color-primary-dark: #800000;
+  --color-secondary: #800000;
+  --color-bg-color: #fafafa;
+}
+
+:root {
+  --primary: #bc0000;
+  --secondary: #800000;
+  --bg-color: #fafafa;
+}
+
+.bg-brand-gradient {
+  background: radial-gradient(circle at center, #bc0000 0%, #800000 100%);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--secondary);
+}
+
+.editorial-grid {
+  position: relative;
+}
+
+.editorial-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 25% 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.text-outline {
+  -webkit-text-stroke: 1px var(--secondary);
+  color: transparent;
+}
+
+.rounded-editorial {
+  border-radius: 40px 160px 40px 40px;
+}
+
+.rounded-editorial-alt {
+  border-radius: 160px 40px 160px 40px;
+}
+
+.font-editorial {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.04em;
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 2rem;
+}
+
+.marquee-content {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: 2rem;
+  animation: scroll 60s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - 2rem)); }
+}
