@@ -18,7 +18,7 @@ const navItems = [
       <a href="/" class="flex items-center gap-2 group">
         <div class="flex flex-col">
           <span class="font-editorial font-black text-primary leading-none text-2xl uppercase tracking-tighter group-hover:text-primary-light transition-colors">SR LAUNDRY.</span>
-          <span class="text-[8px] font-bold text-gray-400 uppercase tracking-[0.3em]">EXPRESS & COIN</span>
+          <span class="text-[8px] font-bold text-gray-500 uppercase tracking-[0.3em]">EXPRESS & COIN</span>
         </div>
       </a>
 
@@ -58,7 +58,7 @@ const navItems = [
         <Image src={logo} alt="Logo" class="h-10 w-10 rounded-full" />
         <span class="font-black text-red-700 text-xl tracking-tighter">SR LAUNDRY</span>
       </div>
-      <button id="mobile-menu-close" class="p-2 text-gray-700">
+      <button id="mobile-menu-close" class="p-2 text-gray-700" aria-label="Close Menu">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
@@ -83,10 +83,10 @@ const navItems = [
     <div class="mt-auto flex flex-col gap-4 text-center">
       <p class="text-gray-500 font-medium italic">"Pakaian Bersih, Hidup Praktis"</p>
       <div class="flex justify-center gap-4">
-        <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-gray-600">
+        <a href="https://www.instagram.com/srlaundrycoin/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-gray-600">
           <i class="fab fa-instagram text-xl"></i>
         </a>
-        <a href="#" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-gray-600">
+        <a href="https://wa.me/6281297252322" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp" class="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-gray-600">
           <i class="fab fa-whatsapp text-xl"></i>
         </a>
       </div>
@@ -121,13 +121,20 @@ const navItems = [
     });
 
     // Header scroll effect
+    let scrolling = false;
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        header?.classList.add('py-4', 'bg-white', 'shadow-md');
-        header?.classList.remove('py-6');
-      } else {
-        header?.classList.add('py-6');
-        header?.classList.remove('py-4', 'bg-white', 'shadow-md');
+      if (!scrolling) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY > 20) {
+            header?.classList.add('py-4', 'bg-white', 'shadow-md');
+            header?.classList.remove('py-6');
+          } else {
+            header?.classList.add('py-6');
+            header?.classList.remove('py-4', 'bg-white', 'shadow-md');
+          }
+          scrolling = false;
+        });
+        scrolling = true;
       }
     };
 

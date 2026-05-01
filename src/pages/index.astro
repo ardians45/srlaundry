@@ -41,6 +41,12 @@ const stats = [
               <Image 
                 src={heroAi} 
                 alt="SR Laundry Hero" 
+                width={400}
+                height={350}
+                widths={[320, 400, 800]}
+                sizes="(max-width: 768px) 320px, 400px"
+                loading="eager"
+                fetchpriority="high"
                 class="w-full max-w-[320px] md:max-w-[400px] h-auto object-cover rounded-editorial shadow-2xl relative z-10"
               />
               <div class="absolute -bottom-6 -right-6 md:-bottom-12 md:-left-12 bg-white w-24 h-24 md:w-32 md:h-32 flex flex-col items-center justify-center rounded-3xl shadow-xl z-20 reveal">
@@ -145,14 +151,14 @@ const stats = [
            <div class="absolute -inset-10 bg-gray-50 rounded-full blur-3xl -z-10"></div>
            <div class="grid grid-cols-2 gap-4">
               <div class="space-y-4">
-                <Image src={mesinJpg} alt="Mesin" class="rounded-3xl shadow-lg aspect-[3/4] object-cover" />
+                <Image src={mesinJpg} alt="Mesin" width={500} height={667} class="rounded-3xl shadow-lg aspect-[3/4] object-cover" />
                 <div class="bg-primary p-8 rounded-3xl text-white">
                   <p class="text-4xl font-black leading-none">2 Jam</p>
                   <p class="text-[10px] font-bold uppercase tracking-widest mt-2">Cepat & Tuntas</p>
                 </div>
               </div>
               <div class="pt-12">
-                <Image src={maintenanceJpg} alt="Maintenance" class="rounded-3xl shadow-lg aspect-[3/4] object-cover" />
+                <Image src={maintenanceJpg} alt="Maintenance" width={500} height={667} class="rounded-3xl shadow-lg aspect-[3/4] object-cover" />
               </div>
            </div>
         </div>
