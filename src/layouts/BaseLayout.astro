@@ -12,7 +12,7 @@ interface Props {
 
 const { 
   title, 
-  description = "SR Laundry Coin Express: Laundry modern Ciledug & Larangan. Sistem Coin Reward di cabang Paninggilan, Parung Serab, Sukarela & Larangan. Cuci bersih",
+  description = "SR Laundry Express menyediakan layanan laundry coin Ciledug dengan sistem koin reward unik. Cuci bersih, higienis, dan hemat di Paninggilan, Parung Serab, dan sekitarnya.",
   image = "/og-image.jpg" 
 } = Astro.props;
 ---
@@ -22,12 +22,28 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
+    <!-- Tag khusus agar Google Search menampilkan logo di hasil pencarian -->
+    <link rel="shortcut icon" href="/favicon.png?v=2" type="image/png">
     <meta name="generator" content={Astro.generator} />
     
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta property="og:site_name" content="SR Laundry Express" />
     <meta name="google-site-verification" content="JKGzBIgPZIL0-JDnVrFfHhlupAZwI_Gqkt355ECK718" />
+    
+    <!-- WebSite Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SR Laundry Express",
+      "alternateName": ["SR Laundry", "Laundry Coin Ciledug"],
+      "url": "https://srlaundry.vercel.app/"
+    }
+    </script>
+
     <ClientRouter />
 
     <!-- Fonts -->
