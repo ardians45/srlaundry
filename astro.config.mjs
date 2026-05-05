@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://srlaundry.vercel.app',
+  site: 'https://www.srlaundry.site',
   build: {
     inlineStylesheets: 'always'
   },
