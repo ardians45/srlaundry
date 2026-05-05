@@ -1,4 +1,5 @@
 // @ts-check
+// Trigger redeploy after revert
 import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
