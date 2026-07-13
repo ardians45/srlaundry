@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const rawArticles = import.meta.glob('./*.md', { eager: true });
+const articles = Object.values(rawArticles) as any[];
+---
+<BaseLayout title="Artikel & Tips Seputar Laundry | SRLaundry" description="Temukan berbagai tips dan trik mencuci, merawat pakaian, hingga perbandingan jasa laundry yang bermanfaat untuk kehidupan sehari-hari Anda.">
+  <section class="pt-32 pb-20 bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <div class="text-center mb-16 reveal">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-950 mb-6">Artikel & Tips <span class="text-red-600">Terbaru</span></h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Tingkatkan pengetahuan Anda seputar perawatan pakaian dengan berbagai artikel informatif yang kami sediakan khusus untuk Anda.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal stagger-reveal active">
+        {articles.map(article => (
+          <a href={article.url} class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full group border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src={article.frontmatter.image} alt={article.frontmatter.title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div class="p-8 flex-1 flex flex-col">
+              <p class="text-xs font-bold text-red-600 uppercase tracking-wider mb-3"><i class="fa-regular fa-calendar mr-1"></i> {article.frontmatter.date}</p>
+              <h2 class="text-xl font-black text-gray-900 mb-3 group-hover:text-red-600 transition-colors line-clamp-2">{article.frontmatter.title}</h2>
+              <p class="text-gray-600 line-clamp-3 mb-6 flex-1">{article.frontmatter.description}</p>
+              <span class="inline-flex items-center text-red-600 font-bold group-hover:gap-2 transition-all">Baca Selengkapnya &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

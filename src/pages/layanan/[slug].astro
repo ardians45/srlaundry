@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { locations, services } from '../../data/seo-data';
+
+export function getStaticPaths() {
+  const paths: any[] = [];
+  
+  services.forEach(service => {
+    locations.forEach(location => {
+      const slug = `${service.slug}-${location.slug}`;
+      paths.push({
+        params: { slug },
+        props: { service, location }
+      });
+    });
+  });
+  
+  return paths;
+}
+
+const { service, location } = Astro.props;
+
+const title = `Layanan ${service.name} Terdekat di ${location.name} - Buka 24 Jam & Murah | SRLaundry`;
+const description = `Mencari ${service.name.toLowerCase()} terdekat di ${location.name}, Tangerang? SRLaundry solusinya! Cepat, bersih, wangi, dan harga terjangkau. Klik untuk rute & promo hari ini!`;
+---
+<BaseLayout title={title} description={description}>
+  <!-- Schema LocalBusiness Khusus Halaman Ini -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": `SRLaundry - ${service.name} di ${location.name}`,
+    "image": "https://www.srlaundry.site/og-image.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": location.name,
+      "addressRegion": "Banten",
+      "addressCountry": "ID"
+    },
+    "description": description,
+    "telephone": "+6281234567890",
+    "priceRange": "$$"
+  })} />
+
+  <section class="pt-32 pb-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-gray-950 mb-6 leading-tight">
+          Layanan <span class="text-red-600">{service.name}</span> Terbaik di <span class="text-red-600">{location.name}</span>
+        </h1>
+        <p class="text-lg text-gray-600">
+          Apakah Anda sedang mencari <strong>{service.name.toLowerCase()}</strong> yang terdekat di area <strong>{location.name}</strong>? SRLaundry hadir memberikan solusi cuci yang cepat, higienis, dan terjangkau untuk kebutuhan harian Anda.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20 reveal">
+        <div class="bg-gray-100 rounded-3xl p-8 aspect-video flex items-center justify-center">
+          <!-- Menggunakan icon umum laundry dari font-awesome -->
+          <i class="fa-solid fa-shirt text-6xl text-gray-300"></i>
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold mb-6">Mengapa Memilih Kami di {location.name}?</h2>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i class="fa-solid fa-check-circle text-red-600 mt-1 mr-3"></i>
+              <span><strong>Lokasi Strategis:</strong> Sangat mudah dijangkau dari berbagai titik di {location.name}.</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-check-circle text-red-600 mt-1 mr-3"></i>
+              <span><strong>Mesin Modern:</strong> Menggunakan mesin cuci dan pengering terkini.</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-check-circle text-red-600 mt-1 mr-3"></i>
+              <span><strong>Pembersih Premium:</strong> Detergen dan softener berkualitas agar pakaian bebas bakteri.</span>
+            </li>
+          </ul>
+          <div class="mt-8">
+            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-red-600 hover:bg-red-700 transition-colors shadow-lg hover:shadow-xl">
+              <i class="fa-brands fa-whatsapp mr-2"></i> Pesan Sekarang
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="max-w-3xl mx-auto reveal">
+        <h2 class="text-3xl font-bold text-center mb-8">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+        <div class="space-y-4">
+          <div class="border border-gray-200 rounded-xl p-6 bg-white shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-bold mb-2">Berapa lama proses {service.name.toLowerCase()} di SRLaundry?</h3>
+            <p class="text-gray-600">Proses cuci hingga kering memakan waktu yang sangat cepat, biasanya sekitar 1-2 jam tergantung dari layanan yang Anda pilih.</p>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-6 bg-white shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-bold mb-2">Apakah lokasi SRLaundry dekat dengan {location.name}?</h3>
+            <p class="text-gray-600">Ya, lokasi kami sangat strategis dan dapat dicapai dengan mudah dari {location.name}. Anda juga bisa mencari rute melalui Google Maps.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
